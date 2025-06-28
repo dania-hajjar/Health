@@ -5,6 +5,11 @@ import plotly.graph_objects as go
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+if importlib.util.find_spec("statsmodels") is None:
+    st.error("⚠️ statsmodels is not installed properly!")
+else:
+    st.success("✅ statsmodels is installed.")
+
 st.set_page_config(
     page_title="Behind the Diagnosis: Alzheimer’s by Data",
     layout="wide"
